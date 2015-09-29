@@ -11,11 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917083937) do
+ActiveRecord::Schema.define(version: 20150929171252) do
 
   create_table "days", force: :cascade do |t|
     t.integer  "date_id"
     t.datetime "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "date"
+    t.integer  "event_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
